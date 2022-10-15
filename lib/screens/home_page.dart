@@ -18,6 +18,34 @@ class homePage extends StatefulWidget {
 }
 
 class _homePageState extends State<homePage> {
+
+  List imageList=[
+    myImages.AED_image,
+    myImages.AUD_image,
+    myImages.CAD_image,
+    myImages.CHF_image,
+    myImages.CNY_image,
+    myImages.DKK_image,
+    myImages.EGP_image,
+    myImages.EUR_image,
+    myImages.GBP_image,
+    myImages.ISK_image,
+    myImages.JPY_image,
+    myImages.KRW_image,
+    myImages.KWD_image,
+    myImages.KZT_image,
+    myImages.LBP_image,
+    myImages.MTR_image,
+    myImages.NOK_image,
+    myImages.PLN_image,
+    myImages.RUB_image,
+    myImages.SEK_image,
+    myImages.SGD_image,
+    myImages.TRY_image,
+    myImages.UAH_image,
+    myImages.USD_image,
+  ];
+
   Future<List<currencyModel?>?>? getResult;
 
   Future<List<currencyModel?>?>? getData() async {
@@ -92,13 +120,15 @@ class _homePageState extends State<homePage> {
                       child: Column(
                         children: [
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
+                              Image.asset(imageList[index], width: 30,),
+                              SizedBox(width: 5,),
                               Text(
                                 currencys?[index]?.code ?? "NO",
                                 style: TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.w700)
                               ),
+                              SizedBox(width: 270,),
                               Icon(Icons.notifications_on_outlined)
                             ],
                           ),
